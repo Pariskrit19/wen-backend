@@ -1,0 +1,12 @@
+variables:
+  #change name as per repo
+  GIT_REPO_URL: "ssh://git@gitlab.webexpertsnepal.com:2020/ashokganika/wenappbackend-staging.git"
+  
+#Auto deploy app as per change made on repository
+deploy:
+  only:
+    refs:
+      - main
+    
+  script: 
+    - bash /home/gitlab-runner/appBackendClone.sh $GIT_REPO_URL 
